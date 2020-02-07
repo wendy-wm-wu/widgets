@@ -35,7 +35,7 @@ class Stopwatch extends Component {
   };
 
   render() {
-    const { timerTime } = this.state;
+    const { timerTime, timerOn } = this.state;
     let hours = ('0' + Math.floor(timerTime/3600000)).slice(-2);
     let minutes = ('0' + (Math.floor(timerTime/60000)) % 60).slice(-2);
     let seconds = ('0' + (Math.floor(timerTime/1000)) % 60).slice(-2); 
@@ -44,9 +44,14 @@ class Stopwatch extends Component {
         <div className="stopwatch-display">
           {hours} : {minutes} : {seconds}
         </div>
-        <button onClick={this.startTime}>Start</button>
-        <button onClick={this.stopTime}>Stop</button>
-        <button onClick={this.resetTime}>Reset</button>
+          {!timerOn && timerTime === 0 && (
+            <button onClick={this.startTime}>Start</button>
+          )}
+          <button onClick={this.stopTime}>Stop</button>
+          {!timerOn && timerTime > 0 && (
+              <button onClick={this.startTime}>Resume</button>
+          )}
+          <button onClick={this.resetTime}>Reset</button>
       </div>
     );
   }

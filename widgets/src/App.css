@@ -1,9 +1,10 @@
-.body {
-  font-family: sans-serif;
+body {
+  text-align: center;
+  font-family: sans-serif; 
 }
 
 .stopwatch {
-  width: 200px;
+  width: 250px;
   height: 100px;
   border: 1px solid black;
   border-radius: 2px;
@@ -12,13 +13,29 @@
 
 .stopwatch-display {
   font-size: 40px;
+  font-family: sans-serif;
 }
 
 button {
-  font-family: sans-serif;
-  color: lightgreen;
-  border-color: lightgreen; 
+  border: 0;
   background: transparent;
-  margin: 10px;
+  margin: 5px;
   border-radius: 5px;
+  background: #78f89f; 
+  line-height: 1; 
+  padding: 0.5rem 1rem; 
+  text-transform: uppercase; 
+}
+
+.calendar-container {
+  border: 2px solid skyblue;
+}
+
+.modal {
+  width: 500px;
+  background: white;
+  border: 1px solid #ccc; 
+  box-shadow: -2rem 2rem 2rem rgba(black, 0.2);
+  filter: blur(0);
+  opacity: 1; 
 }
